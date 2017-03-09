@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://editorCaption"
+        class="com.company.cubafilterdemo.web.patient.PatientEdit"
+        datasource="patientDs"
+        focusComponent="fieldGroup"
+        messagesPack="com.company.cubafilterdemo.web.patient">
+    <dsContext>
+        <datasource id="patientDs"
+                    class="com.company.cubafilterdemo.entity.Patient"
+                    view="fullPatient">
+            <datasource id="siblingDs"
+                        property="sibling"/>
+        </datasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="windowActions"
+            spacing="true">
+        <groupBox caption="Patient"
+                  spacing="true">
+            <fieldGroup id="fieldGroup"
+                        datasource="patientDs">
+                <column width="250px">
+                    <field id="name"/>
+                    <field id="diagnosis"/>
+                </column>
+            </fieldGroup>
+        </groupBox>
+        <groupBox caption="Sibling"
+                  spacing="true">
+            <fieldGroup datasource="siblingDs">
+                <column width="250px">
+                    <field id="name"/>
+                    <field id="diagnosis"/>
+                </column>
+            </fieldGroup>
+        </groupBox>
+        <frame id="windowActions"
+               screen="editWindowActions"/>
+    </layout>
+</window>

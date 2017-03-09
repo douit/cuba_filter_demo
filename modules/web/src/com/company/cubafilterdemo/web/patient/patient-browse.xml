@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.company.cubafilterdemo.web.patient.PatientBrowse"
+        focusComponent="patientsTable"
+        lookupComponent="patientsTable"
+        messagesPack="com.company.cubafilterdemo.web.patient">
+    <dsContext>
+        <groupDatasource id="patientsDs"
+                         class="com.company.cubafilterdemo.entity.Patient"
+                         view="fullPatient">
+            <query>
+                <![CDATA[select e from cubafilterdemo$Patient e]]>
+            </query>
+        </groupDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="patientsTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="patientsTable"
+                datasource="patientsDs">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="patientsTable"
+                    width="100%">
+            <actions>
+                <action id="create"/>
+                <action id="edit"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="name"/>
+                <column id="diagnosis"/>
+                <column id="sibling"/>
+            </columns>
+            <rows datasource="patientsDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="patientsTable.create"/>
+                <button id="editBtn"
+                        action="patientsTable.edit"/>
+                <button id="removeBtn"
+                        action="patientsTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>

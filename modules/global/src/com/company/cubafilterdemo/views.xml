@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<views xmlns="http://schemas.haulmont.com/cuba/view.xsd">
+    <view class="com.company.cubafilterdemo.entity.Patient"
+          extends="_minimal"
+          name="fullPatient">
+        <property name="diagnosis"
+                  view="_minimal"/>
+        <property name="sibling"
+                  view="_minimal">
+            <property name="diagnosis"
+                      view="_minimal"/>
+        </property>
+    </view>
+    <view class="com.company.cubafilterdemo.entity.Diagnosis"
+          extends="_minimal"
+          name="hierarchicalDiagnosis">
+        <property name="parent"
+                  view="_minimal"/>
+    </view>
+</views>

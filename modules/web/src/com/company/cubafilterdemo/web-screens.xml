@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<screen-config xmlns="http://schemas.haulmont.com/cuba/screens.xsd">
+    <include file="com/company/cubafilterdemo/screens.xml"/>
+    <screen id="cubafilterdemo$Diagnosis.browse"
+            template="com/company/cubafilterdemo/web/diagnosis/diagnosis-browse.xml"/>
+    <screen id="cubafilterdemo$Patient.browse"
+            template="com/company/cubafilterdemo/web/patient/patient-browse.xml"/>
+    <screen id="cubafilterdemo$Patient.edit"
+            template="com/company/cubafilterdemo/web/patient/patient-edit.xml"/>
+</screen-config>
